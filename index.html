@@ -390,6 +390,17 @@
             transition: all 0.3s ease;
             cursor: pointer;
             animation: floatBounce 3s ease-in-out infinite;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .floating-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         .floating-btn:hover {
@@ -397,13 +408,14 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
         
-        /* Facebook buttons */
+        /* Facebook buttons com borda */
         .btn-facebook {
             background: linear-gradient(135deg, #1877f2, #0d5dbf);
+            border: 3px solid #1877f2;
         }
         
         .btn-facebook:hover {
-            background: linear-gradient(135deg, #2987ff, #1877f2);
+            border-color: #2987ff;
             box-shadow: 0 10px 30px rgba(24, 119, 242, 0.6);
         }
         
@@ -687,16 +699,16 @@
     
     <!-- Botões Flutuantes de Redes Sociais -->
     <div class="floating-buttons">
-        <!-- Linha 1: 3 Perfis do Facebook -->
+        <!-- Linha 1: 3 Perfis do Facebook com fotos -->
         <div class="floating-row">
-            <a href="https://www.facebook.com/toreto.ribeiro.2025" target="_blank" class="floating-btn btn-facebook" data-tooltip="Facebook - Toreto Ribeiro">
-                <i class="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/toreto.ribeiro.2025" target="_blank" class="floating-btn btn-facebook" data-tooltip="Thiago Ribeiro">
+                <img src="perfil-thiago.jpg" alt="Thiago Ribeiro">
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61555566239767" target="_blank" class="floating-btn btn-facebook" data-tooltip="Facebook - Perfil 2">
-                <i class="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/profile.php?id=61555566239767" target="_blank" class="floating-btn btn-facebook" data-tooltip="Toreto">
+                <img src="perfil-toreto.jpg" alt="Toreto">
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100089268111250" target="_blank" class="floating-btn btn-facebook" data-tooltip="Facebook - Perfil 3">
-                <i class="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/profile.php?id=100089268111250" target="_blank" class="floating-btn btn-facebook" data-tooltip="Toreto Gamer">
+                <img src="perfil-toreto-gamer.jpg" alt="Toreto Gamer">
             </a>
         </div>
         
