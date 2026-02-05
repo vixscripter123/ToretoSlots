@@ -119,6 +119,15 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 50px;
+            color: #fff;
+        }
+        
+        .platforms-title .emoji {
+            color: #ffcc00;
+            filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.8));
+        }
+        
+        .platforms-title .text {
             background: linear-gradient(90deg, #ff9900, #ffcc00, #ff9900);
             background-size: 200% auto;
             -webkit-background-clip: text;
@@ -349,6 +358,126 @@
             line-height: 1.6;
         }
         
+        /* Botões flutuantes de redes sociais */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-end;
+        }
+        
+        .floating-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: floatBounce 3s ease-in-out infinite;
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Facebook buttons */
+        .btn-facebook {
+            background: linear-gradient(135deg, #1877f2, #0d5dbf);
+        }
+        
+        .btn-facebook:hover {
+            background: linear-gradient(135deg, #2987ff, #1877f2);
+            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.6);
+        }
+        
+        /* WhatsApp buttons */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+        
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #2ee673, #25d366);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .btn-whatsapp-group {
+            background: linear-gradient(135deg, #ff9900, #ff5500);
+        }
+        
+        .btn-whatsapp-group:hover {
+            background: linear-gradient(135deg, #ffaa00, #ff6600);
+            box-shadow: 0 10px 30px rgba(255, 153, 0, 0.6);
+        }
+        
+        @keyframes floatBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating-btn:nth-child(1) { animation-delay: 0s; }
+        .floating-btn:nth-child(2) { animation-delay: 0.1s; }
+        .floating-btn:nth-child(3) { animation-delay: 0.2s; }
+        
+        /* Tooltip nos botões */
+        .floating-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 75px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .floating-btn:hover::before {
+            opacity: 1;
+        }
+        
+        /* Responsivo para mobile */
+        @media (max-width: 768px) {
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+            
+            .floating-row {
+                gap: 10px;
+            }
+            
+            .floating-btn::before {
+                display: none;
+            }
+        }
+        
         /* Partículas flutuantes */
         .particles {
             position: fixed;
@@ -441,14 +570,18 @@
                 <div class="logo">
                     <img src="logo-toreto.png" alt="Toreto Slots - Aposta Forte e Aqui">
                 </div>
-                <p class="tagline">Escolha sua plataforma favorita e comece a ganhar agora! Bônus exclusivos e jackpots incríveis te aguardam!</p>
+                <p class="tagline">Esses jogos são apenas para maiores de 18 anos Os jogos são entretenimento, não renda extra Cuidado pois esses jogos podem ser viciantes Esses jogos não possuem nenhuma garantia de ganhos, assim como qualquer loteria. Só use o dinheiro que você tem sobrando se quiser jogar. Jogue com responsabilidade!</p>
             </div>
         </div>
     </header>
     
     <main class="main-content">
         <div class="container">
-            <h2 class="platforms-title">🎰 Escolha sua Plataforma 🎰</h2>
+            <h2 class="platforms-title">
+                <span class="emoji">🎰</span> 
+                <span class="text">Escolha sua Plataforma</span> 
+                <span class="emoji">🎰</span>
+            </h2>
             
             <!-- Cards das plataformas com imagens -->
             <div class="platforms-container">
@@ -488,16 +621,7 @@
                     </div>
                 </a>
                 
-                <a href="https://81ggb.com/?pid=4220677947" target="_blank" class="platform-card">
-                    <img src="plataforma-81gg.jpg" alt="81GG Platform">
-                    <div class="platform-overlay">
-                        <div class="platform-play-btn">
-                            <i class="fas fa-play-circle"></i> JOGAR AGORA
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="https://br788.top/?pid=1638705587" target="_blank" class="platform-card">
+                <a href="https://bv789y.com/?a=f7lhf4xb" target="_blank" class="platform-card">
                     <img src="plataforma-br788.jpg" alt="BR788 Platform">
                     <div class="platform-overlay">
                         <div class="platform-play-btn">
@@ -560,6 +684,32 @@
             </p>
         </div>
     </footer>
+    
+    <!-- Botões Flutuantes de Redes Sociais -->
+    <div class="floating-buttons">
+        <!-- Linha 1: 3 Perfis do Facebook -->
+        <div class="floating-row">
+            <a href="https://www.facebook.com/toreto.ribeiro.2025" target="_blank" class="floating-btn btn-facebook" data-tooltip="Facebook - Toreto Ribeiro">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61555566239767" target="_blank" class="floating-btn btn-facebook" data-tooltip="Facebook - Perfil 2">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100089268111250" target="_blank" class="floating-btn btn-facebook" data-tooltip="Facebook - Perfil 3">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        
+        <!-- Linha 2: WhatsApp Grupo e Pessoal -->
+        <div class="floating-row">
+            <a href="https://chat.whatsapp.com/BNEuiZO9VMjA457bbtwnpp" target="_blank" class="floating-btn btn-whatsapp-group" data-tooltip="Grupo WhatsApp Principal">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://wa.me/qr/WJUS7MWIBF4SD1" target="_blank" class="floating-btn btn-whatsapp" data-tooltip="WhatsApp Pessoal">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
     
     <script>
         // Criar partículas animadas de fundo
@@ -628,6 +778,21 @@
                 const moveY = (mouseY - 0.5) * 20;
                 logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
             }
+        });
+        
+        // Animar entrada dos botões flutuantes
+        window.addEventListener('load', () => {
+            const floatingButtons = document.querySelectorAll('.floating-btn');
+            floatingButtons.forEach((btn, index) => {
+                btn.style.opacity = '0';
+                btn.style.transform = 'translateX(100px)';
+                
+                setTimeout(() => {
+                    btn.style.transition = 'all 0.5s ease-out';
+                    btn.style.opacity = '1';
+                    btn.style.transform = 'translateX(0)';
+                }, 1000 + (index * 100));
+            });
         });
     </script>
 </body>
