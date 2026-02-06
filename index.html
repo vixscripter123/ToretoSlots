@@ -130,16 +130,55 @@
             user-select: none;
         }
         
-        /* Tagline */
-        .tagline {
-            font-size: 1.3rem;
-            text-align: center;
+        /* Warning Box - Mensagem de Alerta */
+        .warning-box {
+            max-width: 900px;
             margin: 40px auto 60px;
-            color: #a3c6ff;
-            max-width: 800px;
-            line-height: 1.6;
-            animation: fadeInUp 1s ease-out;
-            padding: 0 20px;
+            padding: 30px 40px;
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.15), rgba(255, 153, 0, 0.15));
+            border: 3px solid #ff9900;
+            border-radius: 20px;
+            box-shadow: 
+                0 0 30px rgba(255, 153, 0, 0.4),
+                0 0 60px rgba(255, 68, 68, 0.2),
+                inset 0 0 20px rgba(255, 153, 0, 0.1);
+            position: relative;
+            animation: pulseWarning 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseWarning {
+            0%, 100% {
+                box-shadow: 
+                    0 0 30px rgba(255, 153, 0, 0.4),
+                    0 0 60px rgba(255, 68, 68, 0.2),
+                    inset 0 0 20px rgba(255, 153, 0, 0.1);
+                border-color: #ff9900;
+            }
+            50% {
+                box-shadow: 
+                    0 0 40px rgba(255, 153, 0, 0.6),
+                    0 0 80px rgba(255, 68, 68, 0.3),
+                    inset 0 0 30px rgba(255, 153, 0, 0.2);
+                border-color: #ff4444;
+            }
+        }
+        
+        .warning-emoji {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 153, 0, 0.8));
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #ffeeaa;
+            line-height: 1.8;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 500;
         }
         
         @keyframes fadeInUp {
@@ -570,9 +609,17 @@
                 padding: 0 15px;
             }
             
+            .warning-box {
+                margin: 30px 15px 50px;
+                padding: 25px 20px;
+            }
+            
+            .warning-emoji {
+                font-size: 3rem;
+            }
+            
             .tagline {
-                font-size: 1.1rem;
-                padding: 0 15px;
+                font-size: 1.05rem;
             }
             
             .platforms-title {
@@ -598,6 +645,22 @@
             .video-container {
                 border-radius: 15px;
                 border-width: 2px;
+            }
+            
+            .warning-box {
+                margin: 20px 10px 40px;
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+            
+            .warning-emoji {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .tagline {
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
             
             .platforms-title {
@@ -695,8 +758,11 @@
                 </a>
             </div>
             
-            <!-- Mensagem informativa -->
-            <p class="tagline">Esses jogos são apenas para maiores de 18 anos. Os jogos são entretenimento, não renda extra. Cuidado pois esses jogos podem ser viciantes. Esses jogos não possuem nenhuma garantia de ganhos, assim como qualquer loteria. Só use o dinheiro que você tem sobrando se quiser jogar. Jogue com responsabilidade!</p>
+            <!-- Mensagem de Alerta -->
+            <div class="warning-box">
+                <div class="warning-emoji">⚠️</div>
+                <p class="tagline">Esses jogos são apenas para maiores de 18 anos. Os jogos são entretenimento, não renda extra. Cuidado pois esses jogos podem ser viciantes. Esses jogos não possuem nenhuma garantia de ganhos, assim como qualquer loteria. Só use o dinheiro que você tem sobrando se quiser jogar. Jogue com responsabilidade!</p>
+            </div>
             
             <!-- Recursos destacados -->
             <div class="features">
