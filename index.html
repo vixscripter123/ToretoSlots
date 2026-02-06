@@ -95,17 +95,51 @@
             to { background-position: 200% center; }
         }
         
+        /* Vídeo principal */
+        .video-section {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 15px 50px rgba(255, 153, 0, 0.3),
+                0 0 30px rgba(255, 85, 0, 0.2);
+            border: 3px solid rgba(255, 153, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 60px rgba(255, 153, 0, 0.4),
+                0 0 40px rgba(255, 85, 0, 0.3);
+            border-color: rgba(255, 153, 0, 0.8);
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+        
         /* Tagline */
         .tagline {
             font-size: 1.3rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin: 40px auto 60px;
             color: #a3c6ff;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
             line-height: 1.6;
             animation: fadeInUp 1s ease-out;
+            padding: 0 20px;
         }
         
         @keyframes fadeInUp {
@@ -532,6 +566,10 @@
                 width: 300px;
             }
             
+            .video-section {
+                padding: 0 15px;
+            }
+            
             .tagline {
                 font-size: 1.1rem;
                 padding: 0 15px;
@@ -555,6 +593,11 @@
         @media (max-width: 480px) {
             .logo {
                 width: 250px;
+            }
+            
+            .video-container {
+                border-radius: 15px;
+                border-width: 2px;
             }
             
             .platforms-title {
@@ -582,7 +625,16 @@
                 <div class="logo">
                     <img src="logo-toreto.png" alt="Toreto Slots - Aposta Forte e Aqui">
                 </div>
-                <p class="tagline">Esses jogos são apenas para maiores de 18 anos Os jogos são entretenimento, não renda extra Cuidado pois esses jogos podem ser viciantes Esses jogos não possuem nenhuma garantia de ganhos, assim como qualquer loteria. Só use o dinheiro que você tem sobrando se quiser jogar. Jogue com responsabilidade!</p>
+            </div>
+            
+            <!-- Vídeo de Sorteio -->
+            <div class="video-section">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="video-sorteio.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
             </div>
         </div>
     </header>
@@ -642,6 +694,9 @@
                     </div>
                 </a>
             </div>
+            
+            <!-- Mensagem informativa -->
+            <p class="tagline">Esses jogos são apenas para maiores de 18 anos. Os jogos são entretenimento, não renda extra. Cuidado pois esses jogos podem ser viciantes. Esses jogos não possuem nenhuma garantia de ganhos, assim como qualquer loteria. Só use o dinheiro que você tem sobrando se quiser jogar. Jogue com responsabilidade!</p>
             
             <!-- Recursos destacados -->
             <div class="features">
